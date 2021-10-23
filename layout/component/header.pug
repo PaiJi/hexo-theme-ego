@@ -1,0 +1,9 @@
+header
+    .site-info
+        a(href='/')
+            h1=config.title
+        //- p=config.subtitle
+    .site-nav
+        -var pages=site.pages.data
+        each page in pages
+            a(href=url_for(page.path)).nav=page.title

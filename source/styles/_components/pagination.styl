@@ -1,0 +1,26 @@
+.pagination
+    margin:20 0
+    display: flex
+    align-items: center
+    justify-content: center
+    .pagination-btn
+        display: inline-block
+    .page-number
+        width: 24px
+        text-align: center
+    .page-number,.pagination-btn
+        padding 10
+        font-weight: 700
+        margin:0 5
+        background-color: white
+        border-radius: 0.5rem
+        text-decoration: none
+        line-height: 24px
+        color:$dark-666
+    a.page-number,a.extend>.pagination-btn
+        &:hover
+            background-color:$primary
+            color:white
+    span.current
+        cursor not-allowed
+    

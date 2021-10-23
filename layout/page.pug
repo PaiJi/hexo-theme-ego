@@ -1,0 +1,11 @@
+extend component/layout.pug
+
+block content
+    .post-container
+        -var photos=page.photos||[]
+        if photos.length>0
+            .post-cover(style=`background-image:url(${photos[0]})`)
+        .post-info
+            h1= page.title 
+        .post-body
+            != page.content

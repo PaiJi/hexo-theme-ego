@@ -1,0 +1,11 @@
+{
+    "name": "hexo-theme-ego",
+    "version": "0.1.0",
+    "description": "self-use hexo theme ego.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/PaiJi/hexo-theme-ego"
+    },
+    "homepage": "https://blog.jipai.moe",
+    "license": "MIT"
+  }

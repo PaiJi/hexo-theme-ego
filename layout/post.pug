@@ -1,0 +1,19 @@
+extend component/layout.pug
+
+block content
+    .post-container
+        -var photos=page.photos||[]
+        if photos.length>0
+            .post-cover(style=`background-image:url(${photos[0]})`)
+        .post-info
+            h1= page.title 
+            .post-minor-info
+                span.post-date= date(page.date)
+                .post-categories
+                    each category in page.categories.data
+                         a(href=url_for(category.path)).post-category=category.name
+                .post-tags
+                    each tag in page.tags.data
+                        a(href=url_for(tag.path)).post-tag=tag.name
+        .post-body
+            != page.content

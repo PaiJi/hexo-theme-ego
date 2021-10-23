@@ -1,0 +1,19 @@
+
+.posts-list-container
+  each post in page.posts.data
+    - var link = post.link || post.path
+      .post-item
+        if(post.photos[0])
+          .post-item-cover-slice
+            .post-item-cover(style=`background-image:url(${post.photos[0]})`)
+        .post-item-info
+          a.post-item-title(href=url_for(link))= post.title || _p('no_title')
+          .post-minor-info
+                span.post-date= date(post.date)
+                .post-categories
+                    each category in post.categories.data
+                         a(href=url_for(category.path)).post-category=category.name
+                .post-tags
+                    each tag in post.tags.data
+                        a(href=url_for(tag.path)).post-tag=tag.name
+          !=post.excerpt
