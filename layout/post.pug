@@ -17,3 +17,5 @@ block content
                         a(href=url_for(tag.path)).post-tag=tag.name
         .post-body
             != page.content
+        -if(theme.disqusjs.enable)
+            include component/comment-disqusjs.pug
