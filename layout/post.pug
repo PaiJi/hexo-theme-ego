@@ -8,7 +8,7 @@ block content
         .post-info
             h1= page.title 
             .post-minor-info
-                span.post-date= date(page.date)
+                span.post-date= date(page.date,'MMM,Do YYYY')
                 .post-categories
                     each category in page.categories.data
                          a(href=url_for(category.path)).post-category=category.name
