@@ -1,10 +1,12 @@
 - var title = is_home()?`${config.title} - ${config.subtitle}`:`${page.title} - ${config.title}`
-html
+doctype html
+html(lang="zh-Hans")
     head
         title= title
         meta(charset='UTF-8')
         meta(name="generator" content="为什么hexo要在我的head里插这个我不喜欢诶")
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="愿能绽放光芒。")
         link(rel="stylesheet", href=url_for('styles/main.css'))
         link(rel="stylesheet",href=url_for('styles/responsive.css') media="screen and (max-width:770px)")
         link(rel='stylesheet', href="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqusjs.css")
