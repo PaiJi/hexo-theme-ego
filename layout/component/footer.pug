@@ -4,4 +4,12 @@ footer
         | & Make By 
         a(href="https://www.jipai.moe") JiPai 
         |with Ego
-    span#copyright ©2021「JiPai·Store」製作委員会
+    span#copyright 
+            != '©2017-<span id="footer-copyright-current-year">2023</span> 「JiPai·Store」製作委員会'
+script.
+    function calcCurrentYear(){
+        document.getElementById('footer-copyright-current-year').innerHTML = new Date().getFullYear()
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+    calcCurrentYear()
+    }, false);
