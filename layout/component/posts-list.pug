@@ -5,15 +5,15 @@
       .post-item
         if(post.photos[0])
           .post-item-cover-slice
-            .post-item-cover(style=`background-image:url(${post.photos[0]})`)
+            a.post-item-cover(href=url_for(link),style=`background-image:url(${post.photos[0]});display:block;`,aria-label="Twitter")
         .post-item-info
-          a.post-item-title(href=url_for(link))= post.title || _p('no_title')
           .post-minor-info
-                span.post-date= date(post.date)
+                span.post-date= date(post.date,'YYYY年MMMDo')
                 .post-categories
                     each category in post.categories.data
                          a(href=url_for(category.path)).post-category=category.name
                 .post-tags
                     each tag in post.tags.data
                         a(href=url_for(tag.path)).post-tag=tag.name
+          a.post-item-title(href=url_for(link))= post.title || _p('no_title')
           !=post.excerpt
