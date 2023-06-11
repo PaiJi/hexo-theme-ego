@@ -8,13 +8,15 @@ block content
         .post-info
             h1= page.title 
             .post-minor-info
-                span.post-date= date(page.date,'MMM,Do YYYY')
-                .post-categories
-                    each category in page.categories.data
-                         a(href=url_for(category.path)).post-category=category.name
-                .post-tags
-                    each tag in page.tags.data
-                        a(href=url_for(tag.path)).post-tag=tag.name
+                span.post-date= date(page.date,'YYYY-MM-DD')
+                if page.categories.data.length>0
+                    .post-categories
+                        each category in page.categories.data
+                            a(href=url_for(category.path)).post-category=category.name
+                if page.tags.data.length>0
+                    .post-tags
+                        each tag in page.tags.data
+                            a(href=url_for(tag.path)).post-tag=tag.name
         .post-body
             != page.content
         -if(theme.disqusjs.enable)

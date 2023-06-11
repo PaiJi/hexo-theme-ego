@@ -8,12 +8,14 @@
             a.post-item-cover(href=url_for(link),style=`background-image:url(${post.photos[0]});display:block;`,aria-label="Twitter")
         .post-item-info
           .post-minor-info
-                span.post-date= date(post.date,'MMM,Do YYYY')
-                .post-categories
-                    each category in post.categories.data
-                         a(href=url_for(category.path)).post-category=category.name
-                .post-tags
-                    each tag in post.tags.data
-                        a(href=url_for(tag.path)).post-tag=tag.name
+                span.post-date= date(post.date,'YYYY-MM-DD')
+                if post.categories.data.length>0
+                  .post-categories
+                      each category in post.categories.data
+                          a(href=url_for(category.path)).post-category=category.name
+                if post.tags.data.length>0
+                  .post-tags
+                      each tag in post.tags.data
+                          a(href=url_for(tag.path)).post-tag=tag.name
           a.post-item-title(href=url_for(link))= post.title || _p('no_title')
           !=post.excerpt

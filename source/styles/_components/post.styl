@@ -62,14 +62,14 @@
                 color $gray-102
                 font-weight: 600
 
-            .post-date,.post-categories
-                margin-right: 0.3rem
-                &:after
+            .post-categories,.post-tags
+                // margin-right: 0.3rem
+                &:before
                     content:'/'
                     font-weight: 500
                     font-size: 0.9rem
                     color: $gray-102
-                    margin-left: 3px
+                    margin: 0px 3px
 
             .post-categories .post-category,.post-tags .post-tag
                 &:not(:last-child):after
@@ -107,3 +107,5 @@
     pre>code
         word-break: break-all
         display: block
+        border-radius: 5px
+        background-color: rgb(245,247,249)
